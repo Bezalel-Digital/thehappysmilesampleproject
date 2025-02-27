@@ -1,0 +1,144 @@
+---
+title: 'About | Happy Smile Dental Clinic'
+description: 'General and Cosmetic Dental care for Adults and Kids'
+preloadImg: '/assets/images/aboutus-banner.jpg'
+permalink: 'about/'
+eleventyNavigation:
+    key: About Us
+    order: 200
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/about.css">
+    
+{% endblock %}
+
+{% block body %}
+
+
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-843">
+    <div class="cs-container">
+        <span class="cs-int-title" style="padding-top: 2rem;">About Us</span>
+    </div>
+    <!--Background Image-->
+    <picture class="cs-background" aria-hidden="true">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="{%getUrl "/assets/images/aboutus-banner.jpg"| resize({width:660, height:772}) |webp%}">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset="{%getUrl "/assets/images/aboutus-banner.jpg"| resize({width:660, height:772}) |webp%}">
+        <img loading="lazy" decoding="async" src"{%getUrl "/assets/images/aboutus-banner.jpg"| resize({width:660, height:772}) |webp%}" alt="outdoor party" width="1280" height="568">
+    </picture>
+    <img class="cs-wave light" decoding="async" src="/assets/images/cta-wave.svg" alt="graphic" width="1920" height="163" aria-hidden="true">
+    <img class="cs-wave dark" decoding="async" src="/assets/images/cta-wave-dark.svg" alt="graphic" width="1920" height="163" aria-hidden="true">
+</div>
+
+    <!-- ============================================ -->
+    <!--                 Side By Side                 -->
+    <!-- ============================================ -->
+
+    <section id="sbs">
+        <div class="cs-container">
+            <!-- Left Image Section -->
+            <div class="cs-left">
+                <picture class="cs-picture cs-picture1">
+                    <source media="(max-width: 600px)" srcset="{%getUrl "/assets/images/beach-barbados.jpg"| resize({width:291, height:324}) |webp%}">
+                    <source media="(min-width: 601px)" srcset="{%getUrl "/assets/images/beach-barbados.jpg"| resize({width:291, height:324}) |webp%}">
+                    <img aria-hidden="true" decoding="async" src="{%getUrl "/assets/images/beach-barbados.jpg"| resize({width:291, height:324}) |webp%}" alt="beach" loading="lazy" width="400" height="563">
+                </picture>
+                <picture class="cs-picture cs-picture2">
+                    <source media="(max-width: 600px)" srcset="{%getUrl "/assets/images/team1.jpg"| resize({width:442, height:426}) |webp%}">
+                    <source media="(min-width: 601px)" srcset="{%getUrl "/assets/images/team1.jpg"| resize({width:442, height:426}) |webp%}">
+                    <img aria-hidden="true" decoding="async" src="{%getUrl "/assets/images/team1.jpg"| resize({width:442, height:426}) |webp%}" alt="Dr. Natalia Burrows" loading="lazy" width="400" height="563">
+                </picture>
+            </div>
+            <!-- Right Content Section-->
+            <div class="cs-right">
+                <span class="cs-topper">Happy Smile Dental Clinic</span>
+                <h2 class="cs-title">Tailored Dental Solutions for a Lifetime of Healthy Smiles
+                </h2>
+                <p class="cs-text">
+                    <b>Meet Dr. Natalia Burrows – A Frontrunner for Excellence in Dentistry</b><br>
+                    Dr. Natalia Burrows, the founder and lead dentist at Happy Smile Dental Clinic, is a highly skilled and experienced dental professional with a passion for creating healthy, beautiful smiles. She earned her Doctor of Dental Surgery (DDS) degree from the University of West Indies and has undergone advanced training in cosmetic dentistry, restorative treatments, and preventive care.    </p>
+                <p class="cs-text">
+                    With a commitment to staying at the forefront of modern dentistry, our team at Happy Smile Dental Clinic continuously pursues advanced training in dental implants, orthodontics (Invisalign-certified), and advanced endodontic procedures. We actively participate in international dental conferences, workshops, and continuing education programs to ensure that our patients receive the most up-to-date, effective, and high-quality care available.
+                </p>
+                <div class="cs-flex-group">
+                    <p class="cs-flex-p">
+                        Whether you're visiting us for a routine check-up or a complete smile transformation, we are here to provide expert care with a personal touch. Book your appointment today and experience the Happy Smile difference!
+                    </p>
+                    <span class="cs-name">Dr. Natalia Burrows</span>
+                    <span class="cs-job">CEO-Founder</span>
+                    <img class="cs-quote-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg" alt="gavel" width="136" height="77">
+                </div>
+                <a href="/contact" class="cs-button-solid">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+<!--                  Services                    -->
+<!-- ============================================ -->
+
+<section id="services-690">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex-group">
+                <span class="cs-topper">The Happy Smile difference!</span>
+                <h2 class="cs-title">Creating Healthy Smiles with <span class="cs-color">Care and Expertise</span></h2>
+            </div>
+            <p class="cs-text">
+                At Happy Smile Dental Clinic, we believe that every patient deserves personalized, high-quality care in a comfortable and welcoming environment. Our patient-centered approach ensures that your unique needs, concerns, and goals are always at the heart of our treatments.
+
+                Our philosophy is built on three key principles that guide everything we do:
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <picture class="cs-picture">
+                        <img class="cs-icon" src="/assets/svgs/star.svg" loading="lazy" decoding="async" alt="icon" width="32" height="32" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Comprehensive Treatment</h3>
+                    <p class="cs-item-text">
+                        We take a holistic approach to dental care, addressing both immediate concerns and long-term oral health. From preventive check-ups and cleanings to advanced restorative and cosmetic treatments, our goal is to provide complete, customized care that meets each patient’s unique needs.
+                    </p>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <picture class="cs-picture">
+                        <img class="cs-icon" src="/assets/svgs/star.svg" loading="lazy" decoding="async" alt="icon" width="32" height="32" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Advanced Technology & Expertise</h3>
+                    <p class="cs-item-text">
+                        We use cutting-edge dental technology and evidence-based techniques to deliver precise, effective, and minimally invasive treatments. Our team continually enhances their skills through advanced training, ensuring that patients receive the highest quality care with the latest advancements in dentistry.
+                    </p>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <picture class="cs-picture">
+                        <img class="cs-icon" src="/assets/svgs/star.svg" loading="lazy" decoding="async" alt="icon" width="32" height="32" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">A Comfortable & Compassionate Experience</h3>
+                    <p class="cs-item-text">
+                        We understand that visiting the dentist can feel overwhelming, so we create a stress-free, friendly, and supportive environment. Our team listens to your concerns, explains treatment options clearly, and ensures you feel confident and relaxed throughout every step of your dental journey.
+                    </p>
+                </a>
+            </li>
+        </ul>
+        <a href="/contact" class="cs-button-solid">Schedule a Consult</a>
+    
+    </div>
+
+</section>
+                                
+
+
+{% endblock %}

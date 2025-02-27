@@ -1,0 +1,160 @@
+---
+title: 'Reviews | Happy Smile Dental Clinic, Saint James, Barbados'
+description: 'Providing excellent dental care the residents of Saint James and Barbados'
+preloadImg: '/assets/images/review-picture.jpg'
+permalink: 'reviews/'
+eleventyNavigation:
+    key: Reviews
+    order: 400
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/reviews.css">
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-843">
+    <div class="cs-container">
+        <span class="cs-int-title" style="padding-top: 2rem;">Reviews</span>
+    </div>
+    <!--Background Image-->
+    <picture class="cs-background" aria-hidden="true">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="{%getUrl "/assets/images/review-picture.jpg" |webp({quality:20})|resize({width:400, height:386, position:"bottom"}) %}">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset="{%getUrl "/assets/images/review-picture.jpg"|resize({position:"bottom"}) |webp({width:400, height:386,quality:20})%}">
+        <img loading="lazy" decoding="async" src="{%getUrl "/assets/images/review-picture.jpg"|resize({width:400, height:386,position:"bottom"}) |webp({quality:20})%}" alt="outdoor party" width="1280" height="568">
+    </picture>
+    <img class="cs-wave light" decoding="async" src="/assets/images/cta-wave.svg" alt="graphic" width="1920" height="163" aria-hidden="true">
+    <img class="cs-wave dark" decoding="async" src="/assets/images/cta-wave-dark.svg" alt="graphic" width="1920" height="163" aria-hidden="true">
+</div>
+
+    <!-- ============================================ -->
+    <!--                  Reviews                     -->
+    <!-- ============================================ -->
+
+    <section id="reviews">
+        <div class="container">
+            <div class="review">
+                <picture>
+                    <img class="profile" loading="lazy" decoding="async" src="/assets/svgs/profile.svg" alt="" width="99" height="99">
+                </picture>
+                <p>
+                    Dr. Burrows and her team are amazing! From the moment I walked in, I felt comfortable and well taken care of. The staff is friendly, the clinic is spotless, and my teeth have never felt better. Highly recommend!
+                </p>
+                <div class="star-group">
+                    <span class="name">Lisa M.<span class="desc">Bridgetown, Barbados</span></span>
+                    <picture>
+                        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="91" height="15">
+                    </picture>
+                </div>
+            </div>
+            <div class="review">
+                <picture>
+                    <img class="profile" loading="lazy" decoding="async" src="/assets/svgs/profile.svg" alt="" width="99" height="99">
+                </picture>
+                <p>
+                    I've always been nervous about dental visits, but the team at Happy Smile Dental Clinic made me feel completely at ease. They explained everything clearly, and the procedure was painless. Thank you for such a great experience!
+                </p>
+                <div class="star-group">
+                    <span class="name">Daniel P.<span class="desc">Oistins, Barbados</span></span>
+                    <picture>
+                        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="91" height="15">
+                    </picture>
+                </div>
+            </div>
+            <div class="review">
+                <picture>
+                    <img class="profile" loading="lazy" decoding="async" src="/assets/svgs/profile.svg" alt="" width="99" height="99">
+                </picture>
+                <p>
+                    I’ve been to several dentists before, but none compare to Dr. Burrows and her team. Their attention to detail and genuine care for patients set them apart. My whole family now comes here, and we couldn’t be happier!
+                </p>
+                <div class="star-group">
+                    <span class="name">Sophia W.<span class="desc">Holetown, Barbados</span></span>
+                    <picture>
+                        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="91" height="15">
+                    </picture>
+                </div>
+            </div>
+            <div class="review">
+                <picture>
+                    <img class="profile" loading="lazy" decoding="async" src="/assets/svgs/profile-woman.svg" alt="" width="99" height="99">
+                </picture>
+                <p>
+                    I recently got a teeth whitening treatment, and the results are incredible! The staff was kind, professional, and took the time to answer all my questions. I’m beyond happy with my new, brighter smile!
+                </p>
+                <div class="star-group">
+                    <span class="name">Jason T.<span class="desc">Speightstown, Barbados</span></span>
+                    <picture>
+                        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="91" height="15">
+                    </picture>
+                </div>
+            </div>
+            <div class="review">
+                <picture>
+                    <img class="profile" loading="lazy" decoding="async" src="/assets/svgs/profile.svg" alt="" width="99" height="99">
+                </picture>
+                <p>
+                    I took my 7-year-old daughter for her first dental visit, and I was so impressed with how patient and gentle they were with her. She left smiling and excited for her next check-up. A fantastic clinic for families
+                </p>
+                <div class="star-group">
+                    <span class="name">Marissa L.<span class="desc">St. Philip, Barbados</span></span>
+                    <picture>
+                        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="91" height="15">
+                    </picture>
+                </div>
+            </div>
+            <div class="review">
+                <picture>
+                    <img class="profile" loading="lazy" decoding="async" src="/assets/svgs/profile.svg" alt="" width="99" height="99">
+                </picture>
+                <p>
+                    I had a terrible toothache, and Happy Smile Dental Clinic got me in for an emergency appointment the same day. Dr. Burrows quickly found the issue and fixed it with ease. So grateful for their care and professionalism!
+                </p>
+                <div class="star-group">
+                    <span class="name">Ryan G.<span class="desc">St. Michael, Barbados</span></span>
+                    <picture>
+                        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="91" height="15">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; padding-top: 10px;">  <a href="/contact" class="cs-button-solid">Schedule a Consult</a>
+    </div>
+
+</section>
+
+    <!-- ============================================ -->
+    <!--                  CTA                     -->
+    <!-- ============================================ -->
+
+    <section id="cta-1132">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Book Now</span>
+                <h2 class="cs-title">Secure Your Spot on Our Schedule</h2>
+                <a class="cs-button-solid" href="/contact">Book Online Now</a>
+            </div>
+        </div>
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{%getUrl "/assets/images/reviews-cta-image.jpg" |webp({quality:20})|resize({width:400, height:289}) %}">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="{%getUrl "/assets/images/reviews-cta-image.jpg" |webp({quality:20})|resize({width:400, height:289}) %}">
+            <img loading="lazy" decoding="async" src="{%getUrl "/assets/images/reviews-cta-image.jpg" |webp({quality:20})|resize({width:400, height:289}) %}" alt="At the dentist" width="1280" height="568">
+        </picture>
+        <!--SVG V Graphic-->
+        <img class="cs-wave light" decoding="async" src="/assets/images/cta-wave.svg" alt="graphic" width="1920" height="163" aria-hidden="true">
+        <img class="cs-wave dark" decoding="async" src="/assets/images/cta-wave-dark.svg" alt="graphic" width="1920" height="163" aria-hidden="true">
+    </section>
+
+{% endblock %}
