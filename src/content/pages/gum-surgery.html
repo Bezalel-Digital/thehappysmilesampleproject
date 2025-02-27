@@ -31,7 +31,9 @@ eleventyNavigation:
         <source media="(max-width: 600px)" srcset="{%getUrl "/assets/images/aboutus-banner.jpg"| resize({width:660, height:772}) |webp%}">
         <!--Tablet and above Image-->
         <source media="(min-width: 601px)" srcset="{%getUrl "/assets/images/aboutus-banner.jpg"| resize({width:660, height:772}) |webp%}">
-        <img loading="lazy" decoding="async" src"{%getUrl "/assets/images/aboutus-banner.jpg"| resize({width:660, height:772}) |webp%}" alt="outdoor party" width="1280" height="568">
+    <img loading="lazy" decoding="async" 
+     src="{% getUrl "/assets/images/aboutus-banner.jpg" | resize({width: 660, height: 772}) | webp %}" 
+     alt="outdoor party" width="1280" height="568">
     </picture>
     <img class="cs-wave light" decoding="async" src="/assets/images/cta-wave.svg" alt="graphic" width="1920" height="163" aria-hidden="true">
     <img class="cs-wave dark" decoding="async" src="/assets/images/cta-wave-dark.svg" alt="graphic" width="1920" height="163" aria-hidden="true">
