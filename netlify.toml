@@ -14,8 +14,4 @@ package = "netlify-plugin-cache"
     "public/assets/images", # Processed images - adjust to match your outputDir
     ".cache" # Remote Assets
   ]
-  [[plugins]]
-  package = "netlify-plugin-image-optimization"
-  [plugins.inputs]
-    quality = 80
-    formats = ["webp", "jpeg", "png"] # Ensure WebP is supported alongside other formats.
+
