@@ -1,0 +1,562 @@
+---
+title: 'Bright Smiles, Expert Care | Happy Smile Dental Clinic | Saint James, Barbados'
+description: 'Happy Smile Dental Clinic provides top-quality dental care in Saint James, Barbados. Book an appointment today for a healthier, brighter smile!'
+preloadImg: '/assets/images/dentist-working.jpg'
+permalink: '/'
+tags: 'sitemap' # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
+eleventyNavigation:
+  key: Home
+  order: 100
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/local.css"/>
+    <link rel="stylesheet" href="/assets/css/critical.css"/>
+
+    <!-- Script for Netlify Identity -->
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script defer>
+        if (window.netlifyIdentity) {
+            window
+                .netlifyIdentity
+                .on('init', (user) => {
+                    if (!user) {
+                        window
+                            .netlifyIdentity
+                            .on('login', () => {
+                                document.location.href = '/admin/';
+                            });
+                    }
+                });
+        }
+    </script>
+
+    <!-- JSON Schema Markup -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "LocalBusiness",
+            "name": "{{ client.name }}",
+            {% if preloadImg %}"image": "{{ preloadImg }}",{% endif %}
+            {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
+            {% if client.email %}"email": "{{ client.email }}",{% endif %}
+            {% if client.address %}
+                "address": {
+                    "@type": "PostalAddress"{% if client.address.lineOne %},
+                        "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
+                    {% endif %}
+                    {% if client.address.city %},
+                        "addressLocality": "{{ client.address.city }}"
+                    {% endif %}
+                    {% if client.address.state %},
+                        "addressRegion": "{{ client.address.state }}"
+                    {% endif %}
+                    {% if client.address.zip %},
+                        "postalCode": "{{ client.address.zip }}"
+                    {% endif %}
+                    {% if client.address.country %},
+                        "addressCountry": "{{ client.address.country }}"
+                    {% endif %}
+                },
+            {% endif %}
+            {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
+            {% if client.socials %}
+                "sameAs": [{% for platform, url in client.socials %}
+                        {% if not loop.first %},{% endif %}
+                        "{{ url }}"
+                    {% endfor %}]
+            {% endif %}
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+<!-- Hero-->
+<section id="hero-1160">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Reliable Dental Care </span>
+            <h1 class="cs-title">Take Control of Your Oral Health</h1>
+            <p class="cs-text">
+                Your smile deserves the best—trust a team that puts your health, comfort, and confidence first.
+            </p>
+            <a class="cs-button-solid" href="#contact-1333">Speak to a Dentist</a>
+
+        </div>
+    </div>
+
+    <!--SVG V Graphic-->
+    <img class="cs-wave light" decoding="async" src="/assets/images/hero-wave.svg" alt="graphic" width="1920" height="163" aria-hidden="true" style="position: absolute">
+    <img class="cs-wave dark" decoding="async" src="/assets/images/hero-wave-dark.svg" alt="graphic" width="1920" height="163" aria-hidden="true" style="position: absolute">
+
+    <!-- Background Image, also BG Image is set in CSS at 1600px wide for parallax effect -->
+    <picture class="cs-background" style="position: absolute">
+        <source media="(max-width: 600px)" srcset="{%getUrl "/assets/images/dentist-working.jpg" |webp({quality:20})%}">
+        <source media="(min-width: 601px)" srcset="{%getUrl "/assets/images/dentist-working.jpg" |webp({quality:20})%}">
+        <img fethpriority="high" decoding="async" src="{%getUrl "/assets/images/dentist-working.jpg" |webp({quality:20})%}" alt="Dentist at work" width="2250" height="1500" aria-hidden="true">
+    </picture>
+</section>
+<!-- ============================================ -->
+<!--               Services + Stats               -->
+<!-- ============================================ -->
+
+<section id="services-2051">
+    <div class="cs-container">
+        <div class="cs-wrapper">
+            <div class="cs-content">
+                <span class="cs-topper">About Us</span>
+                <h2 class="cs-title">Creating Healthy, Radiant Smiles
+
+                </h2>
+                <p class="cs-text">
+                    We are dedicated to providing top-quality dental care in a comfortable and welcoming environment. Our team combines expertise with a patient-first approach, ensuring personalized treatments that prioritize your health, confidence, and well-being.
+                </p>
+                <p class="cs-text">
+                    We offer a full range of dental services, from preventive care such as routine cleanings and checkups to advanced restorative procedures like dental implants, crowns, and bridges. Our cosmetic dentistry solutions, including professional teeth whitening and Invisalign®, help you achieve a radiant, beautiful smile.
+                </p>
+                <p class="cs-text">
+                    With years of expertise, cutting-edge technology, and a love for excellence, we strive to make every visit a positive experience. Whether you're looking for routine maintenance, smile enhancements, or complex dental treatments like gum surgery, we’re here to provide compassionate, high-quality care tailored to your unique needs. Let us help you achieve and maintain a healthy, confident smile for life
+                </p>
+                
+                <a href="#contact-1333" class="cs-button-solid">Get Started</a>
+            </div>
+            <div class="cs-picture-group">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{%getUrl "/assets/images/dental-patient-visit.png"|resize({width:736, height:1040})| webp({quality:25})%}">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset{%getUrl "/assets/images/dental-patient-visit.png"|resize({width:736, height:1040})| webp({quality:25})%}">
+                    <img loading="lazy" decoding="async" src="{%getUrl "/assets/images/dental-patient-visit.png"|resize({width:736, height:1040})| webp({quality:25})%}" alt="dental checkup" width="328" height="520">
+                </picture>
+                <div class="cs-box">
+                    <img class="cs-box-icon" loading="lazy" decoding="async" src="assets/images/people-svgrepo-com.svg" alt="people" width="60" height="60">
+                    <span class="cs-box-number">2,000+</span>
+                    <span class="cs-box-desc">
+                        Patients regained their confidence with expert dental care.
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="cs-stat-group">
+            <p class="cs-text">
+                Our commitment to excellence is reflected in the countless smiles we’ve restored, the years of expertise we’ve honed, and the specialists who make it all possible. Every treatment is backed by experience, precision, and a passion for providing world-class patient care.
+            </p>
+            <ul class="cs-stats">
+                <li class="cs-li">
+                    <img class="cs-icon" aria-hidden="true" src="assets/images/first-aid-kit-1.svg" decoding="async" alt="icon" width="48" height="48" loading="lazy">
+                    <div class="cs-flex">
+                        <span class="cs-stat">12+</span>
+                        <p class="cs-stat-text">Years of exceptional work.</p>
+                    </div>
+                </li>
+                <li class="cs-li">
+                    <img class="cs-icon" aria-hidden="true" src="assets/images/award-2-svgrepo-com.svg" decoding="async" alt="icon" width="48" height="48" loading="lazy">
+                    <div class="cs-flex">
+                        <span class="cs-stat">20</span>
+                        <p class="cs-stat-text">Certified Specialists providing top-tier dental care.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <div class="cs-flex">
+                    <h3 class="cs-h3">Gum Surgery</h3>
+                    <p class="cs-item-text">
+                        Gum surgery treats conditions like gum disease and recession, restoring healthy tissue and improving both oral health and aesthetics. Our procedures range from deep cleanings to grafting, helping to protect teeth and enhance your smile.
+                    </p>
+                    <a href="/gum-surgery" class="cs-link">
+                        Learn More
+                    </a>
+                </div>
+                <picture class="cs-item-picture">
+                    <img loading="lazy" decoding="async"
+                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/toothache.png" alt="icon"
+                    width="181" height="102">
+                </picture>
+            </li>
+            <li class="cs-item">
+                <div class="cs-flex">
+                    <h3 class="cs-h3">Dental Implants</h3>
+                    <p class="cs-item-text">
+                        A permanent, natural-looking solution for missing teeth, our dental implants restore function, improve aesthetics, and support long-term oral health. Designed to blend seamlessly with your smile, they provide a strong, durable foundation for replacement teeth.
+                    </p>
+                    <a href="/dental-implants" class="cs-link">
+                        Learn More
+                    </a>
+                </div>
+                <picture class="cs-item-picture">
+                    <img loading="lazy" decoding="async"
+                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/implant.png" alt="icon" width="181"
+                    height="102">
+                </picture>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- ============================================ -->
+<!--               Reviews               -->
+<!-- ============================================ -->
+
+<section id="reviews-567">
+    <div class="cs-container">
+        <div class="cs-content-830">
+            <div class="cs-flex">
+                <span class="cs-topper">5/5 Google Rating</span>
+                <h2 class="cs-title">400+ 5 Star Reviews
+                on Google</h2>
+            </div>
+            <a class="cs-button-solid" href="/reviews">Read More Reviews</a>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <!--Blue Quote-->
+                <img class="cs-stars" aria-hidden="true" src="/assets/images/stars3.svg" decoding="async" alt="quote icon" width="189" height="24">
+                <p class="cs-item-text">
+                    I’ve been a patient at the clinic for a few years now, and the care I’ve received has always been excellent. The team is friendly and professional, and they made my recent dental implant procedure a breeze. I’m so happy with the results and feel more confident in my smile
+            </p>
+                <div class="cs-flex-group">
+                    <picture class="cs-picture">
+                        <img class="cs-profile" src="/assets/images/donny.webp" decoding="async" alt="profile" width="50" height="50" aria-hidden="true">
+                    </picture>
+                    <span class="cs-name">
+                    Daniel
+                    <span class="cs-job">Bridgetown</span>
+                    </span>
+                </div>
+            </li>
+            <li class="cs-item">
+                <!--Blue Quote-->
+                <img class="cs-stars" aria-hidden="true" src="/assets/images/stars3.svg" decoding="async" alt="quote icon" width="189" height="24">
+                <p class="cs-item-text">
+                    After having gum surgery at the Happy Smile Clinic, I can honestly say I’m amazed by the results. The staff took great care to ensure I was comfortable throughout the process, and my gum health has improved dramatically. I’m glad I trusted them with my care
+            </p>
+                <div class="cs-flex-group">
+                    <picture class="cs-picture">
+                        <img class="cs-profile" src="/assets/images/kristin.webp" decoding="async" alt="profile" width="50" height="50" aria-hidden="true">
+                    </picture>
+                    <span class="cs-name">
+                    Claudia B.
+                    <span class="cs-job">Saint Michael</span>
+                    </span>
+                </div>
+            </li>
+            <li class="cs-item">
+                <!--Blue Quote-->
+                <img class="cs-stars" aria-hidden="true" src="/assets/images/stars3.svg" decoding="async" alt="quote icon" width="189" height="24">
+                <p class="cs-item-text">
+                    I had dental implants done at The Happy Smile Clinic while visiting Barbados, and I couldn’t be happier with the outcome. The staff was supportive and informative, and the procedure was smooth with minimal discomfort. My new smile feels great, and I’m so grateful for the care I received during my visit
+            </p>
+                <div class="cs-flex-group">
+                    <picture class="cs-picture">
+                        <img class="cs-profile" src="/assets/images/brynn.webp" decoding="async" alt="profile" width="50" height="50" aria-hidden="true">
+                    </picture>
+                    <span class="cs-name">
+                    Brynn
+                    <span class="cs-job">London, Uk</span>
+                    </span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--SVG V Graphic-->
+    <img class="cs-wave light" decoding="async" src="/assets/images/reviews-wave.svg" alt="graphic" width="1920" height="163" aria-hidden="true">
+    <img class="cs-wave dark" decoding="async" src="/assets/images/reviews-wave-dark.svg" alt="graphic" width="1920" height="163" aria-hidden="true">
+</section>
+     <!-- ============================================ -->
+    <!--                  Services                    -->
+    <!-- ============================================ -->
+
+    <section id="services-1117">
+        <!--SVG V Graphic-->
+        <img class="cs-wave light" decoding="async" src="/assets/images/quote-waves.svg" alt="graphic" width="1920" height="163" aria-hidden="true">
+        <img class="cs-wave dark" decoding="async" src="/assets/images/quote-waves-dark.svg" alt="graphic" width="1920" height="163" aria-hidden="true">
+        <div class="cs-container">
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <div class="cs-image-group">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/images/dentalvisit.svg" alt="icon" width="48" height="48">
+                        <img class="cs-graphic" loading="lazy" decoding="async" src="/assets/images/services-graphic.svg" alt="shape" width="48" height="48">
+                    </div>
+                    <div class="cs-flex">
+                        <h2 class="cs-h2">Expert Care, Every Visit</h2>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-image-group">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/images/trust.svg" alt="icon" width="48" height="48">
+                        <img class="cs-graphic" loading="lazy" decoding="async" src="/assets/images/services-graphic.svg" alt="shape" width="48" height="48">
+                    </div>
+                    <div class="cs-flex">
+                        <h2 class="cs-h2">Personalized Treatments for Your Smile</h2>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-image-group">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/images/happydentist.svg" alt="icon" width="48" height="48">
+                        <img class="cs-graphic" loading="lazy" decoding="async" src="/assets/images/services-graphic.svg" alt="shape" width="48" height="48">
+                    </div>
+                    <div class="cs-flex">
+                        <h2 class="cs-h2">A Comfortable, Stress-Free Experience</h2>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>  
+    
+    <!-- ============================================ -->
+    <!--           Full Service Dentistry              -->
+    <!-- ============================================ -->
+    <section id="sbs-870">
+        <div class="cs-container">
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{%getUrl "/assets/images/patient.jpg"| resize({width:736, height:800}) |webp%}">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="{%getUrl "/assets/images/patient.jpg"| resize({width:736, height:800})| webp%}">
+                <img loading="lazy" decoding="async" src="{%getUrl "/assets/images/patient.jpg"| resize({width:736, height:800})| webp%}" alt="lady at the dentist" width="630" height="775">
+            </picture>
+            <div class="cs-content">
+                <span class="cs-topper">Full Service Dentistry</span>
+                <h2 class="cs-title">Comprehensive Dental Care in Saint James, Barbados</h2>
+                <p class="cs-text">
+                    At Happy Smile Dental Clinic, we provide high-quality dental care for individuals and families in Saint James and beyond. Our expert team offers a full range of services to keep your smile healthy and beautiful, including:
+            </p>
+                <ul class="list-1074">
+                    <li class="cs-li">Dental Exams & Cleanings</li>
+                    <li class="cs-li">Teeth Whitening</li>
+                    <li class="cs-li">Dental Implants</li>
+                    <li class="cs-li">Gum Surgery</li>
+                    <li class="cs-li">Fillings & Restorations</li>
+                    <li class="cs-li">Crowns & Bridges</li>
+                    <li class="cs-li">Veneers</li>
+                    <li class="cs-li">Invisalign® & Orthodontics</li>
+                    <li class="cs-li">Root Canal Therapy</li>
+                    <li class="cs-li">Tooth Extractions</li>
+                    <li class="cs-li">Dentures & Partials</li>
+                    <li class="cs-li">TMJ & Jaw Pain Treatment</li>
+                    <li class="cs-li">Emergency Dental Care</li>
+                    <li class="cs-li">Pediatric Dentistry</li>
+                    <li class="cs-li">Mouthguards & Nightguards</li>
+                    <li class="cs-li">Preventive Gum Care</li>
+                    <li class="cs-li">Free Oral Health Assessment</li>
+                    <li class="cs-li">And More!</li>
+                </ul>
+                <a class="cs-button-solid" href="/contact">Book Online Now</a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                Meet The Team                 -->
+    <!-- ============================================ -->
+
+    <section id="meet-team-1140">
+        <div class="cs-container">
+            <div class="cs-content">
+                <div class="cs-flex">
+                    <span class="cs-topper">Committed to Your Smile!</span>
+                    <h2 class="cs-title">Meet a few of our amazing Super Heroes</h2>
+                </div>
+                <a class="cs-button-solid" href="/contact">Book Online Now</a>
+
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <picture class="cs-picture">
+                         <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{%getUrl "/assets/images/team1.jpg"| resize({width:368, height:475}) |webp%}">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{%getUrl "/assets/images/team1.jpg"| resize({width:368, height:475}) |webp%}">
+                        <img loading="lazy" decoding="async" src="{%getUrl "/assets/images/team1.jpg"| resize({width:368, height:475}) |webp%}" alt="Dr. Natalia Burrows" width="305" height="407">
+                    </picture>
+                    <div class="cs-info">
+                        <span class="cs-name">Dr. Natalia Burrows</span>
+                        <span class="cs-job">Owner & President</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-picture">
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{%getUrl "/assets/images/team2.jpg"| resize({width:368, height:475}) |webp%}">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{%getUrl "/assets/images/team2.jpg"| resize({width:368, height:475}) |webp%}">
+                        <img loading="lazy" decoding="async" src="{%getUrl "/assets/images/team2.jpg"| resize({width:368, height:475}) |webp%}" alt="Dr. Lydia Adams" width="305" height="407">
+                    </picture>
+                    <div class="cs-info">
+                        <span class="cs-name">Dr. Lydia Adams</span>
+                        <span class="cs-job">Director & Head of Operations</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-picture">
+                        <!--Mobile Image-->
+                        <<source media="(max-width: 600px)" srcset="{%getUrl "/assets/images/team3.jpg"| resize({width:368, height:475}) |webp%}">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{%getUrl "/assets/images/team3.jpg"| resize({width:368, height:475}) |webp%}">
+                        <img loading="lazy" decoding="async" src="{%getUrl "/assets/images/team3.jpg"| resize({width:368, height:475}) |webp%}" alt="Natalia Braithwaite" width="305" height="407">
+                    </picture>
+                    <div class="cs-info">
+                        <span class="cs-name">Natalia Braithwaite R.D.H</span>
+                        <span class="cs-job">Senior Dental Hygienist</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-picture">
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{%getUrl "/assets/images/team4.jpg"| resize({width:368, height:475}) |webp%}">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{%getUrl "/assets/images/team4.jpg"| resize({width:368, height:475}) |webp%}">
+                        <img loading="lazy" decoding="async" src="{%getUrl "/assets/images/team4.jpg"| resize({width:368, height:475}) |webp%}" alt="Dr. Scott Sealy" width="305" height="407">
+                    </picture>
+                    <div class="cs-info">
+                        <span class="cs-name">Dr. Scott Sealy</span>
+                        <span class="cs-job">Head of General Dentistry</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-picture">
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{%getUrl "/assets/images/team5.jpg"| resize({width:368, height:475}) |webp%}">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{%getUrl "/assets/images/team5.jpg"| resize({width:368, height:475}) |webp%}">
+                        <img loading="lazy" decoding="async" src="{%getUrl "/assets/images/team5.jpg"| resize({width:368, height:475}) |webp%}" alt="Dr. Leo Yseult" width="305" height="407">
+                    </picture>
+                    <div class="cs-info">
+                        <span class="cs-name">Dr Leo Yseult</span>
+                        <span class="cs-job">Head of Cosmetic Dentistry</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-picture">
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{%getUrl "/assets/images/team6.jpg"| resize({width:368, height:475}) |webp%}">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{%getUrl "/assets/images/team6.jpg"| resize({width:368, height:475}) |webp%}">
+                        <img loading="lazy" decoding="async" src="{%getUrl "/assets/images/team6.jpg"| resize({width:368, height:475}) |webp%}" alt="Dr. Raj Fashek" width="305" height="407">
+                    </picture>
+                    <div class="cs-info">
+                        <span class="cs-name">Dr. Raj Fashek</span>
+                        <span class="cs-job">Head of Pediatric Dentistry</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-picture">
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{%getUrl "/assets/images/team7.jpg"| resize({width:368, height:475}) |webp%}">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{%getUrl "/assets/images/team7.jpg"| resize({width:368, height:475}) |webp%}">
+                        <img loading="lazy" decoding="async" src="{%getUrl "/assets/images/team7.jpg"| resize({width:368, height:475}) |webp%}" alt="Annie Hall" width="305" height="407">
+                    </picture>
+                    <div class="cs-info">
+                        <span class="cs-name">Annie Hall</span>
+                        <span class="cs-job">Receptionist</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+<!--                   Contact                    -->
+<!-- ============================================ -->
+
+<section id="contact-1333">
+    <div class="cs-container">
+        <!--Form-->
+        <form class="cs-form" id="cs-form-1333" name="Contact Form" method="post">
+            <div class="cs-content">
+                <span class="cs-topper">Contact Us</span>
+                <h2 class="cs-title">Make Appointment</h2>
+            </div>
+            <label class="cs-label">
+                Name
+                <input class="cs-input" required type="text" id="name-1333" name="name" placeholder="Name">
+            </label>
+            <label class="cs-label cs-email">
+                Email
+                <input class="cs-input" required type="email" id="email-1333" name="email" placeholder="Email">
+            </label>
+            <label class="cs-label cs-phone">
+                Phone
+                <input class="cs-input" required type="number" id="phone-1333" name="phone" placeholder="Phone">
+            </label>
+            <label class="cs-label">
+                Message
+                <textarea class="cs-input cs-textarea" required name="Message" id="message-1333" placeholder="Write message..."></textarea>
+            </label>
+            <button class="cs-button-solid cs-submit" type="submit">Schedule Appointment</button>
+        </form>
+        <div class="cs-content">
+            <span class="cs-topper">Asked Questions</span>
+            <h2 class="cs-title">Frequently Asked Questions</h2>
+            <ul class="cs-faq-group">
+                <!-- Active class added as default -->
+                <li class="cs-faq-item active">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            How often should I visit the dentist?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        You should visit the dentist at least twice a year for a routine check-up and cleaning. However, if you have specific dental issues like gum disease or frequent cavities, we may recommend more frequent visits to ensure your oral health stays on track.                    
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            What can I do to prevent cavities?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        The best way to prevent cavities is by brushing your teeth twice a day with fluoride toothpaste, flossing daily, and limiting sugary or acidic foods and drinks. Regular dental check-ups and cleanings also help remove plaque buildup that can lead to cavities.
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Is teeth whitening safe?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Yes! Professional teeth whitening is safe when done correctly. In-office whitening treatments and dentist-approved take-home kits use safe levels of bleaching agents that won’t harm your enamel. However, overuse of store-bought whitening products may cause tooth sensitivity or gum irritation.
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            What are the signs of gum disease?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Early signs of gum disease include red, swollen, or bleeding gums, persistent bad breath, and gum recession. If left untreated, it can progress to more severe stages, potentially leading to tooth loss. Regular dental cleanings and good oral hygiene can help prevent and manage gum disease.
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Do I need to get my wisdom teeth removed?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Not everyone needs to have their wisdom teeth removed. However, if they are impacted, causing pain, crowding, or increasing the risk of infection, extraction may be recommended. A dental exam and X-rays will help determine whether removal is necessary in your case.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<script>
+const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
+        for (const item of faqItems) {
+            const onClick = () => {
+            item.classList.toggle('active')
+        }
+        item.addEventListener('click', onClick)
+        }
+   </script>                            
+                                
+{% endblock %}
