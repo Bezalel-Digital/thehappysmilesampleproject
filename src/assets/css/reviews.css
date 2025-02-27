@@ -1,0 +1,404 @@
+/* PAGE-SPECIFIC STYLES FOR THE REVIEWS PAGE */
+/*-- -------------------------- -->
+<---           Reviews          -->
+<--- -------------------------- -*/
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+  #reviews {
+    margin: auto;
+    padding-top: 7.5rem;
+    padding-bottom: 3.125rem;
+  }
+  #reviews .container {
+    max-width: 82.5rem;
+    width: 96%;
+  }
+  #reviews .review {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.3125rem;
+    margin: auto;
+    margin-bottom: 6.25rem;
+    background: #fff;
+    max-width: 25.625rem;
+    width: 100%;
+    padding: 4rem 1.875rem 1.125rem 1.875rem;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
+  }
+  #reviews .review .profile {
+    position: absolute;
+    top: calc(-51 / 16 * 1rem);
+    left: 1.875rem;
+    display: block;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    height: 6.1875rem;
+    width: 6.1875rem;
+  }
+  #reviews .review p {
+    margin-bottom: 1.75rem;
+    line-height: 1.5em;
+    text-align: left;
+  }
+  #reviews .review .star-group {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e7e7e7;
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+  #reviews .review .star-group .name {
+    display: block;
+    line-height: 1.5rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    text-align: left;
+  }
+  #reviews .review .star-group .desc {
+    display: block;
+    font-weight: 400;
+    color: #575757;
+  }
+  #reviews .review .star-group img {
+    display: block;
+    margin: 0;
+    height: 0.9375rem;
+    width: 5.6875rem;
+  }
+  #reviews .review:last-of-type {
+    margin-bottom: 0;
+  }
+}
+/* Tablet */
+@media only screen and (min-width: 48rem) {
+  #reviews {
+    padding-top: 9.375rem;
+    padding-bottom: 3.125rem;
+  }
+  #reviews .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    font-size: min(1.4vw, 1em);
+    column-gap: 1.875rem;
+  }
+  #reviews .review {
+    margin: 0;
+    margin-bottom: 9.375rem;
+  }
+  #reviews .review:last-of-type {
+    margin-bottom: 9.375rem;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #reviews .review {
+    background: var(--medium);
+  }
+  body.dark-mode #reviews .review .name {
+    color: #fff;
+  }
+  body.dark-mode #reviews .review .desc {
+    opacity: 0.7;
+    color: #fff;
+  }
+}
+
+/*-- -------------------------- -->
+<---            CTA             -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #cta-1132 {
+    z-index: 1;
+    position: relative;
+    background-color: var(--primary);
+    overflow: hidden;
+    padding: var(--sectionPadding);
+    /* chnages at tablet */
+    padding-bottom: 20vw;
+  }
+  #cta-1132 .cs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    max-width: 80rem;
+    width: 100%;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #cta-1132 .cs-topper {
+    color: var(--bodyTextColorWhite);
+  }
+  #cta-1132 .cs-content {
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+    width: 100%;
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+  }
+  #cta-1132 .cs-title {
+    /* 28px - 40px */
+    margin: 0 0 clamp(1.75rem, 3vw, 2.5rem);
+    max-width: 18ch;
+    text-transform: capitalize;
+    /* Override.  cs-topper cs-title and first cs-text should be removed and put into your global css sheet so it can control every instance of them on your site and is consistent. This selector is a section specific override that stays inside this stitch */
+    color: var(--bodyTextColorWhite);
+  }
+  #cta-1132 .cs-button-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  #cta-1132 .cs-button-solid {
+    background-color: var(--secondary);
+    color: #fff;
+    transition: color 0.3s;
+  }
+  #cta-1132 .cs-button-solid:hover {
+    color: var(--primary);
+  }
+  #cta-1132 .cs-button-solid:before {
+    background-color: #fff;
+  }
+  #cta-1132 .cs-background {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+  #cta-1132 .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* Makes img tag act as a background image */
+    object-fit: cover;
+  }
+  #cta-1132 .cs-background:before {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background color overlay */
+    content: "";
+    opacity: 0.8;
+    display: block;
+    background: var(--primary);
+    height: 100%;
+    width: 100%;
+  }
+  #cta-1132 .cs-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: auto;
+    width: 100%;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #cta-1132 {
+    /* changes at desktop */
+    padding-bottom: 15vw;
+  }
+}
+/* Desktop - 1024pxpx */
+@media only screen and (min-width: 64rem) {
+  #cta-1132 {
+    /* changes at desktop */
+    padding-bottom: 13vw;
+  }
+}
+/* Desktop - 1600px */
+@media only screen and (min-width: 100rem) {
+  #cta-1132 .cs-background {
+    background: url("/assets/images/cta.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  #cta-1132 .cs-background img {
+    display: none;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #cta-1132 .cs-dark {
+    display: block;
+  }
+  body.dark-mode #cta-1132 .cs-light {
+    display: none;
+  }
+}
+
+/*-- -------------------------- -->
+<---          Footer            -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #cs-footer-308 {
+    padding: var(--sectionPadding);
+    /* Navigation Links */
+  }
+  #cs-footer-308 .cs-container {
+    width: 100%;
+    /* reset on desktop */
+    max-width: 43.75rem;
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+  }
+  #cs-footer-308 .cs-logo-group {
+    /* takes up all the space, lets the other ul's wrap below it */
+    width: 100%;
+    position: relative;
+  }
+  #cs-footer-308 .cs-logo {
+    width: 11.125rem;
+    height: auto;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+  #cs-footer-308 .cs-logo-img {
+    width: 100%;
+    height: auto;
+  }
+  #cs-footer-308 .cs-logo-img.dark {
+    display: none;
+  }
+  #cs-footer-308 .cs-nav {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  #cs-footer-308 .cs-nav-li {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  #cs-footer-308 .cs-header {
+    font-size: 1rem;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: black;
+    position: relative;
+    display: block;
+  }
+  #cs-footer-308 .cs-nav-link {
+    font-size: 1rem;
+    text-decoration: none;
+    line-height: 1.5em;
+    color: black;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s;
+  }
+  #cs-footer-308 .cs-nav-link:before {
+    /* underline */
+    content: "";
+    width: 0%;
+    height: 0.125rem;
+    background: currentColor;
+    opacity: 1;
+    position: absolute;
+    display: block;
+    bottom: -0.125rem;
+    left: 0;
+    transition: width 0.3s;
+  }
+  #cs-footer-308 .cs-nav-link:hover {
+    color: var(--primary);
+  }
+  #cs-footer-308 .cs-nav-link:hover:before {
+    width: 100%;
+  }
+  #cs-footer-308 .cs-icon {
+    width: 1.5rem;
+    height: auto;
+    margin-right: 0.75rem;
+  }
+  #cs-footer-308 .cs-bottom {
+    max-width: 80rem;
+    margin: auto;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #484848;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #cs-footer-308 .cs-copyright,
+  #cs-footer-308 .cs-copyright-link {
+    font-size: 1rem;
+    line-height: 1.5em;
+    color: var(--bodyTextColorWhite);
+  }
+  #cs-footer-308 .cs-copyright-link {
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  #cs-footer-308 .cs-copyright-link:hover {
+    color: var(--primary);
+  }
+  #cs-footer-308 .cs-text {
+    color: var(--bodyTextColorWhite);
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #cs-footer-308 .cs-container {
+    row-gap: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    row-gap: 2.5rem;
+  }
+  #cs-footer-308 .cs-nav {
+    width: auto;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #cs-footer-308 .cs-container {
+    max-width: 80rem;
+    flex-wrap: nowrap;
+    /* align everything to the right */
+    justify-content: flex-end;
+    column-gap: 5.25rem;
+  }
+  #cs-footer-308 .cs-logo-group {
+    width: 30%;
+    max-width: 24.1875rem;
+    /* pushes away from everything to the right */
+    margin-right: auto;
+  }
+  #cs-footer-308 .cs-text {
+    width: 100%;
+    color: var(--bodyTextColorWhite);
+  }
+}
